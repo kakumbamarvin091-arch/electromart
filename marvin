@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroMart | Electronics Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* Animated Background */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:300%;
+
+height:300%;
+
+background:
+
+radial-gradient(circle,#3b82f620 2px,transparent 2px);
+
+background-size:60px 60px;
+
+animation:moveBG 60s linear infinite;
+
+z-index:-2;
+
+}
+
+@keyframes moveBG{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-500px,-500px);
+
+}
+
+}
+
+/* NAVBAR */
+
+nav{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:92%;
+
+padding:18px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:18px;
+
+z-index:999;
+
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:700;
+
+color:#38bdf8;
+
+letter-spacing:1px;
+
+}
+
+.logo span{
+
+color:white;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:35px;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.4s;
+
+}
+
+nav ul li a:hover{
+
+color:#38bdf8;
+
+}
+
+.icons{
+
+display:flex;
+
+gap:20px;
+
+font-size:20px;
+
+align-items:center;
+
+}
+
+.icons i{
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.icons i:hover{
+
+color:#38bdf8;
+
+transform:scale(1.2);
+
+}
+
+.cart{
+
+position:relative;
+
+}
+
+.badge{
+
+position:absolute;
+
+top:-8px;
+
+right:-10px;
+
+width:18px;
+
+height:18px;
+
+background:red;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:10px;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:120px 8%;
+
+}
+
+.left{
+
+width:50%;
+
+animation:fadeUp 1s;
+
+}
+
+.left h1{
+
+font-size:65px;
+
+line-height:75px;
+
+margin-bottom:20px;
+
+}
+
+.left h1 span{
+
+color:#38bdf8;
+
+}
+
+.left p{
+
+font-size:18px;
+
+color:#d6d6d6;
+
+margin-bottom:35px;
+
+line-height:32px;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.btn{
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+font-size:17px;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.primary{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.primary:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 35px rgba(37,99,235,.5);
+
+}
+
+.secondary{
+
+background:transparent;
+
+border:2px solid #38bdf8;
+
+color:white;
+
+}
+
+.secondary:hover{
+
+background:#38bdf8;
+
+color:black;
+
+}
+
+.right{
+
+width:45%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+}
+
+.circle{
+
+width:520px;
+
+height:520px;
+
+border-radius:50%;
+
+background:linear-gradient(45deg,#2563eb,#06b6d4);
+
+filter:blur(60px);
+
+opacity:.4;
+
+position:absolute;
+
+animation:pulse 5s infinite;
+
+}
+
+.device{
+
+position:absolute;
+
+border-radius:25px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.5);
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+.phone{
+
+width:170px;
+
+top:60px;
+
+left:50px;
+
+}
+
+.laptop{
+
+width:360px;
+
+bottom:20px;
+
+right:20px;
+
+animation-delay:1s;
+
+}
+
+.watch{
+
+width:120px;
+
+top:20px;
+
+right:80px;
+
+animation-delay:2s;
+
+}
+
+.headphones{
+
+width:170px;
+
+bottom:140px;
+
+left:0;
+
+animation-delay:3s;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+padding:60px 8%;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.06);
+
+padding:35px;
+
+border-radius:18px;
+
+backdrop-filter:blur(15px);
+
+text-align:center;
+
+transition:.5s;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 15px 30px rgba(56,189,248,.3);
+
+}
+
+.card h2{
+
+font-size:42px;
+
+color:#38bdf8;
+
+}
+
+.card p{
+
+margin-top:10px;
+
+color:#ddd;
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Electro<span>Mart</span>
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Phones</a></li>
+
+<li><a href="#">Laptops</a></li>
+
+<li><a href="#">Gaming</a></li>
+
+<li><a href="#">Accessories</a></li>
+
+<li><a href="#">Deals</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<div class="icons">
+<a href="#newsletter">
+<i class="fas fa-search"></i>
+</a>
+<i class="far fa-heart"></i>
+
+<div class="cart">
+<a href="electronics.html">
+<i class="fas fa-shopping-cart"></i>
+</a>
+<div class="badge">3</div>
+
+</div>
+<a href="sign.html">
+<i class="far fa-user"></i>
+</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="left">
+
+<h1>
+
+Upgrade Your
+
+<span>Digital Life</span>
+
+</h1>
+
+<p>
+
+Discover the latest smartphones, laptops, gaming gear,
+audio devices and smart electronics with unbeatable
+prices and premium quality.
+
+</p>
+
+<div class="buttons">
+<a href="sign.html">
+<button class="btn primary">
+
+Sign up
+
+</button>
+</a>
+<a href="electronics.html">
+<button class="btn secondary">
+
+Explore Deals
+
+</button>
+</a>
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="circle"></div>
+
+<img class="device phone"
+src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+alt="Phone">
+
+<img class="device laptop"
+src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900"
+alt="Laptop">
+
+<img class="device watch"
+src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
+alt="Watch">
+
+<img class="device headphones"
+src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+alt="Headphones">
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="card">
+
+<h2>50K+</h2>
+
+<p>Happy Customers</p>
+
+</div>
+
+<div class="card">
+
+<h2>15K+</h2>
+
+<p>Products</p>
+
+</div>
+
+<div class="card">
+
+<h2>500+</h2>
+
+<p>Brands</p>
+
+</div>
+
+<div class="card">
+
+<h2>98%</h2>
+
+<p>Customer Satisfaction</p>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- CATEGORIES SECTION -->
+<!-- ========================= -->
+
+<section class="categories">
+
+    <h2 class="section-title">Shop by Category</h2>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Smartphones</h3>
+            <p>Latest Android & iPhone models</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fas fa-laptop"></i>
+            <h3>Laptops</h3>
+            <p>Gaming, Business & Student laptops</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fas fa-headphones"></i>
+            <h3>Audio</h3>
+            <p>Headphones & Bluetooth speakers</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Gaming</h3>
+            <p>Consoles & Accessories</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FEATURED PRODUCTS -->
+<!-- ========================= -->
+
+<section class="products">
+
+<h2 class="section-title">
+Featured Electronics
+</h2>
+
+<div class="product-grid">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=700">
+
+<h3>Gaming Laptop</h3>
+
+<h4>$1499</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600">
+
+<h3>Smartphone</h3>
+
+<h4>$899</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600">
+
+<h3>Wireless Headphones</h3>
+
+<h4>$249</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600">
+
+<h3>Smart Watch</h3>
+
+<h4>$399</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FLASH SALE -->
+<!-- ========================= -->
+
+<section class="sale">
+
+<h2>⚡ Flash Sale</h2>
+
+<h1>Up To 60% OFF</h1>
+
+<div id="timer">
+
+02 : 12 : 45
+
+</div>
+
+<button>
+
+Shop Deals
+
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- TESTIMONIALS -->
+<!-- ========================= -->
+
+<section class="reviews">
+
+<h2 class="section-title">
+
+Customer Reviews
+
+</h2>
+
+<div class="review-box">
+
+★★★★★
+
+<p>
+
+"The best electronics marketplace I've ever used.
+Fast delivery and excellent quality."
+
+</p>
+
+<h4>- Marvin K.</h4>
+
+</div>
+
+<div class="review-box">
+
+★★★★★
+
+<p>
+
+"Affordable prices with genuine products."
+
+</p>
+
+<h4>- Sarah N.</h4>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section id="newsletter" class="newsletter">
+
+<h2>
+
+Stay Updated
+
+</h2>
+
+<p>
+
+Receive our latest deals every week.
+
+</p>
+
+<input type="text"
+
+placeholder="Search product">
+
+<button>
+
+Search
+
+</button>
+
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<h2>
+
+ElectroMart
+
+</h2>
+
+<p>
+
+Premium Electronics Store
+
+</p>
+
+<div class="social">
+
+<i class="fab fa-facebook"></i>
+
+<a href=""><i class="fab fa-instagram"></i></a>
+
+<i class="fab fa-x-twitter"></i>
+
+<i class="fab fa-linkedin"></i>
+
+</div>
+
+<p>
+
+© 2026 ElectroMart. All Rights Reserved.
+
+</p>
+
+</footer>
+<style>
+    .section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#38bdf8;
+}
+
+.categories,
+.products,
+.reviews,
+.newsletter{
+padding:100px 8%;
+}
+
+.category-grid,
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.category-card,
+.product,
+.review-box{
+background:rgba(255,255,255,.06);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(20px);
+transition:.4s;
+text-align:center;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.category-card:hover,
+.product:hover,
+.review-box:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 35px rgba(56,189,248,.25);
+}
+
+.category-card i{
+font-size:60px;
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+.product img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:20px;
+transition:.4s;
+}
+
+.product:hover img{
+transform:scale(1.08);
+}
+
+.product h4{
+color:#38bdf8;
+margin:15px 0;
+}
+
+.product button,
+.sale button,
+.newsletter button{
+padding:14px 30px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+transition:.4s;
+}
+
+.product button:hover,
+.sale button:hover,
+.newsletter button:hover{
+background:#38bdf8;
+color:#000;
+}
+
+.sale{
+padding:100px 8%;
+text-align:center;
+background:linear-gradient(135deg,#1d4ed8,#06b6d4);
+margin:80px;
+border-radius:25px;
+}
+
+.sale h1{
+font-size:60px;
+margin:20px 0;
+}
+
+#timer{
+font-size:42px;
+margin:30px 0;
+font-weight:bold;
+}
+
+.newsletter{
+text-align:center;
+}
+
+.newsletter input{
+width:350px;
+padding:15px;
+border:none;
+border-radius:30px;
+margin:20px;
+outline:none;
+}
+
+footer{
+padding:60px;
+text-align:center;
+background:#050b16;
+margin-top:80px;
+}
+
+.social{
+margin:20px;
+}
+
+.social i{
+font-size:28px;
+margin:0 12px;
+cursor:pointer;
+transition:.4s;
+}
+
+.social i:hover{
+color:#38bdf8;
+transform:translateY(-5px);
+}
+</style>
+<script>
+
+// =====================
+// FLASH SALE COUNTDOWN
+// =====================
+
+let hours = 2;
+let minutes = 12;
+let seconds = 45;
+
+const timer = document.getElementById("timer");
+
+setInterval(() => {
+
+    if (seconds > 0) {
+        seconds--;
+    } else {
+        seconds = 59;
+
+        if (minutes > 0) {
+            minutes--;
+        } else {
+            minutes = 59;
+
+            if (hours > 0) {
+                hours--;
+            }
+        }
+    }
+
+    timer.innerHTML =
+    String(hours).padStart(2,'0') + " : " +
+    String(minutes).padStart(2,'0') + " : " +
+    String(seconds).padStart(2,'0');
+
+}, 1000);
+
+// =====================
+// DARK MODE TOGGLE
+// =====================
+
+let darkMode = false;
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "d") {
+        darkMode = !darkMode;
+
+        if (darkMode) {
+            document.body.style.background = "#000";
+            document.body.style.color = "#fff";
+        } else {
+            document.body.style.background =
+            "linear-gradient(135deg,#020617,#0f172a,#1e3a8a)";
+        }
+    }
+
+});
+
+// =====================
+// SIMPLE CART SYSTEM
+// =====================
+
+let cartCount = 3;
+
+const badge = document.querySelector(".badge");
+
+document.querySelectorAll(".product button").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        cartCount++;
+        badge.innerText = cartCount;
+
+        btn.innerText = "Added ✓";
+        btn.style.background = "#22c55e";
+
+        setTimeout(() => {
+            btn.innerText = "Add to Cart";
+            btn.style.background = "#2563eb";
+        }, 1500);
+
+    });
+
+});
+
+// =====================
+// CATEGORY HOVER EFFECT SOUND (optional visual feedback)
+// =====================
+
+document.querySelectorAll(".category-card").forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "scale(1.05)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "scale(1)";
+    });
+
+});
+
+// =====================
+// SCROLL ANIMATION
+// =====================
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+        }
+
+    });
+
+});
+
+document.querySelectorAll(
+".category-card, .product, .review-box"
+).forEach(el => {
+
+    el.style.opacity = 0;
+    el.style.transform = "translateY(50px)";
+    el.style.transition = "1s";
+
+    observer.observe(el);
+
+});
+
+</script>
